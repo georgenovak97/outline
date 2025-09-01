@@ -7,7 +7,7 @@ WORKDIR $APP_PATH
 
 ---
 
-FROM node:22-slim AS runner
+FROM node:19-slim AS runner
 
 LABEL org.opencontainers.image.source="https://github.com/outline/outline"
 
