@@ -252,6 +252,6 @@ export const buildPitchBlackTheme = (input: Partial<Colors>) => {
   };
 };
 
-export const light = buildLightTheme(defaultColors);
+export const dark = buildDarkTheme(defaultColors);
 
-export default light as DefaultTheme;
+export default dark as DefaultTheme;
