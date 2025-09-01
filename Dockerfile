@@ -5,8 +5,9 @@ FROM ${BASE_IMAGE} AS base
 ARG APP_PATH
 WORKDIR $APP_PATH
 
-# ---
-FROM node:22-slim AS runner
+---
+
+FROM node:18-slim AS runner
 
 LABEL org.opencontainers.image.source="https://github.com/outline/outline"
 
@@ -22,7 +23,7 @@ COPY --from=base $APP_PATH/node_modules ./node_modules
 COPY --from=base $APP_PATH/package.json ./package.json
 
 # Install wget to healthcheck the server
-RUN  apt-get update \
+RUN apt-get update \
   && apt-get install -y wget \
   && rm -rf /var/lib/apt/lists/*
 
